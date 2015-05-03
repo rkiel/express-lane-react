@@ -1,0 +1,14 @@
+extends ../layouts/private
+
+block content
+  h1 Dashboard
+  p.
+    Welcome to your dashboard! You are now logged in.
+
+  h2 User Information
+  p Id: #{user.id}
+  p First Name: #{user.firstName}
+  p Last Name: #{user.lastName}
+  p Email: #{user.email}
+  p UUID: #{user.uuid}
+  p Hash: #{user.hash}

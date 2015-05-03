@@ -1,0 +1,38 @@
+{
+  "name": "vagrant",
+  "version": "0.0.0",
+  "private": true,
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.4.x"
+  },
+  "scripts": {
+    "start": "node ./bin/www",
+    "pretest": "./node_modules/jshint/bin/jshint ./**/*.js",
+    "test": "mocha -R spec --check-leaks --recursive --bail",
+    "autotest": "nodemon node_modules/mocha/bin/mocha -R spec --check-leaks --recursive --bail"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.1.0",
+    "body-parser": "~1.10.1",
+    "client-sessions": "^0.7.0",
+    "csurf": "^1.6.5",
+    "dateformat": "^1.0.11",
+    "debug": "~2.1.1",
+    "express": "~4.11.0",
+    "jade": "~1.9.0",
+    "jsonwebtoken": "^3.2.2",
+    "mongoose": "^3.8.22",
+    "object-merge": "^2.5.1",
+    "ramda": "^0.9.0",
+    "serve-favicon": "~2.2.0",
+    "uuid": "^2.0.1",
+    "winston": "^0.9.0"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "jshint": "^2.6.0",
+    "mocha": "^2.1.0",
+    "sinon": "^1.12.2"
+  }
+}

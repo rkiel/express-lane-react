@@ -1,0 +1,55 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/bootstrap-3.3.2-dist/css/bootstrap.min.css')
+    script(src='/javascripts/jquery-1.11.2.min.js')
+    script(src='/bootstrap-3.3.2-dist/js/bootstrap.min.js')
+  body
+    div(class='navbar navbar-inverse navbar-static-top')
+      div(class='container')
+        div(class='navbar-header')
+          if user
+            a(href='/dashboard' class='navbar-brand') Express Lane
+          else
+            a(href='/' class='navbar-brand') Express Lane
+          button(type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse')
+            span(class='sr-only') Toggle navigation
+            span(class='icon-bar')
+            span(class='icon-bar')
+            span(class='icon-bar')
+        ul(class='nav navbar-nav navbar-right collapse navbar-collapse')
+          if user
+            li
+              a(href='#' data-toggle='dropdown') Account
+                span(class='caret')
+              ul(class='dropdown-menu')
+                li
+                  a(href='/user/password') Change Password
+                li(class='divider')
+                li
+                  a(href='/hornburg/logout') Logout
+          else
+            li
+              a(href='#' data-toggle='dropdown') About
+                span(class='caret')
+              ul(class='dropdown-menu')
+                li
+                  a(href='/about/us') About Us
+                li
+                  a(href='/about/contact') Contact Us
+                li(class='divider')
+                li
+                  a(href='/blog') Blog
+                li(class='divider')
+                li
+                  a(href='http://www.facebook.com' target='_blank') Facebook
+                li
+                  a(href='http://www.twitter.com' target='_blank') Twitter
+            li
+              a(href='/hornburg/register') Register
+            li
+              a(href='/hornburg/login') Login
+    div(class='container')
+      block content
+    block footer
